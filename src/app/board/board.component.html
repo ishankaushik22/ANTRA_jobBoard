@@ -2,7 +2,8 @@
     <h2>Hacker News Jobs Board</h2>
 
     <div *ngFor="let item of currentStories" class="storyObject">
-            <h4>{{item.title}}</h4>
+            <h4><a *ngIf="item.url" href="`$(item.url)`">{{item.title}}</a></h4>
+            
             <p>By: {{item.by}}, {{item.time | date:"MMM dd, yyyy 'at' hh:mm a"}} </p>
 
     </div>

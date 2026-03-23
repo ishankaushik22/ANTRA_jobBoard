@@ -21,6 +21,7 @@ export class BoardComponent implements AfterViewInit {
         this.currentStories = this.storydata.slice(0, this.storyToShow);
         console.log(this.currentStories);
       });
+      
   }
 
   loadMoreJobs() {
@@ -29,5 +30,6 @@ export class BoardComponent implements AfterViewInit {
     if(this.storyToShow===this.storydata.length){
       this.loadBtn=false
     }
+    console.log(this.currentStories);
   }
 }
