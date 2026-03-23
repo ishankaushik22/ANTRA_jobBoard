@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-direction: column;
+    //align-items: center; 
+    padding: 10px;
+    background-color:bisque;
+    width: 50%,
+}
+h2{
+    color:chocolate;
+}
+.storyObject{
+    background-color: white;
+    border: 1px lightgray solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+.loadMorebtn{
+    background-color: chocolate;
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    width: 200px;
+    align-self: center;
+}
+

@@ -1,0 +1,11 @@
+<div class="container">
+    <h2>Hacker News Jobs Board</h2>
+
+    <div *ngFor="let item of currentStories" class="storyObject">
+            <h4>{{item.title}}</h4>
+            <p>By: {{item.by}}, {{item.time | date:"MMM dd, yyyy 'at' hh:mm a"}} </p>
+
+    </div>
+
+    <button *ngIf="loadBtn" (click)="loadMoreJobs()" class="loadMorebtn">Load More Jobs</button>
+</div>
