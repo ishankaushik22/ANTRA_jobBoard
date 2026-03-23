@@ -9,7 +9,8 @@ import { BoardDataService } from './board-data.service';
 export class BoardComponent implements AfterViewInit {
   constructor(private data: BoardDataService) {}
   storydata: any[] = [];
-  storyToShow: number = 6;
+  storyEnd: number = 6;
+  storyBegin:number = 0;
   currentStories: any[] = [];
   loadBtn=true;
   ngAfterViewInit(): void {
@@ -18,16 +19,17 @@ export class BoardComponent implements AfterViewInit {
       .pipe()
       .subscribe((val: any) => {
         this.storydata = Object.values(val);
-        this.currentStories = this.storydata.slice(0, this.storyToShow);
+        this.currentStories = this.storydata.slice(this.storyBegin, this.storyEnd);
         console.log(this.currentStories);
       });
-      
+
   }
 
   loadMoreJobs() {
-    this.storyToShow= Math.min(this.storyToShow+6, this.storydata.length)
-    this.currentStories = this.storydata.slice(0, this.storyToShow);
-    if(this.storyToShow===this.storydata.length){
+    this.storyEnd= Math.min(this.storyEnd+6, this.storydata.length)
+    this.storyBegin+=6;
+    this.currentStories = this.storydata.slice(this.storyBegin, this.storyEnd);
+    if(this.storyEnd>=this.storydata.length){
       this.loadBtn=false
     }
     console.log(this.currentStories);
